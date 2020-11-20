@@ -4,33 +4,21 @@ import {Link} from '@reach/router';
 
 const Main = props => {
     const [pets,setPets] = useState([]);
-    const [bounce,setBounce] = useState(false);
 
     useEffect(() => {
         Axios.get('http://localhost:8000/api/pets')
             .then(res => setPets(res.data.results))
             .catch(err => console.log(err));
-    },[bounce])
-
-    const bouncePet = (id,name) => {
-        Axios.delete(`http://localhost:8000/api/pets/destroy/${id}`)
-            .then(res => {
-                if(res.data.results){
-                    alert(`You adopted ${name} from the Shelter, you're awesome!'`)
-                    // creates state variable to re-render DOM
-                    setBounce(!bounce);
-                }
-            })
-            .catch(err => console.log(err))
-    }
+    })
 
     return (
         <>
-            <Link to="/new" >Add Disco Dog</Link>
+            <Link to="/new" >Know a pet needing a home? </Link>
             <table className="table table-hover col-6 mx-auto">
                 <thead>
                     <tr>
-                        <th>Dog</th>
+                        <th>Pet</th>
+                        <th>Type</th>
                         <th>Actions Available</th>
                     </tr>
                 </thead>
@@ -38,15 +26,15 @@ const Main = props => {
                     {
                         pets.map((pet,i) => <tr key={i}>
                                                 <td>
-                                                    <Link to={`/details/${pet._id}`}>{pet.name}</Link>
+                                                    <p className = "petName" >{pet.name}</p>
                                                     
                                                 </td>
                                                 <td>
+                                                    <p className ="petType">{pet.type}</p> 
+                                                </td>
+                                                <td>
                                                     <Link className="btn btn-primary" to={`/edit/${pet._id}`} >Edit</Link>
-                                                    <button 
-                                                        onClick={() => bouncePet(pet._id,pet.name)}
-                                                        className="btn btn-danger"
-                                                    >Remove</button>
+                                                    <Link className = "btn btn-danger" to ={`/details/${pet._id}`}>Details</Link>
                                                 </td>
                                             </tr>
                         )

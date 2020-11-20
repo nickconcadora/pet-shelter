@@ -14,45 +14,54 @@ const PetForm = props => {
                 <span className="text-danger">{errors.name ? errors.name.message : ""}</span>
             </div>
             <div className="form-group">
-                <label htmlFor="breed">Breed:</label>
+                <label htmlFor="type">Pet Type:</label>
                 <input 
                     type="text" 
-                    name="breed" 
+                    name="type" 
                     className="form-control"
-                    value={form.breed}
+                    value={form.type}
                     onChange={handleInputChange}
                 />
-                <span className="text-danger">{errors.breed ? errors.breed.message : ""}</span>
+                <span className="text-danger">{errors.type ? errors.type.message : ""}</span>
             </div>
             <div className="form-group">
-                <label htmlFor="age">Age:</label>
-                <input 
-                    type="number" 
-                    name="age" 
-                    className="form-control"
-                    value={form.age}
-                    onChange={handleInputChange}
-                />
-                <span className="text-danger">{errors.age ? errors.age.message : ""}</span>
-            </div>
-            <div className="form-group">
-                <label htmlFor="favoriteMove">Favorite Move:</label>
+                <label htmlFor="description">Description:</label>
                 <input 
                     type="text" 
-                    name="favoriteMove" 
+                    name="description" 
                     className="form-control"
-                    value={form.favoriteMove}
+                    value={form.description}
+                    onChange={handleInputChange}
+                />
+                <span className="text-danger">{errors.description ? errors.description.message : ""}</span>
+            </div>
+            <div className="form-group">
+                <label htmlFor="skill1">(Skills are Optional) Skill 1:</label>
+                <input 
+                    type="text" 
+                    name="skill1" 
+                    className="form-control"
+                    value={form.skill1}
                     onChange={handleInputChange}
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="isLit">Is Lit?:</label>
+                <label htmlFor="skill2">Skill 2:</label>
                 <input 
-                    type="checkbox" 
-                    name="isLit" 
+                    type="text" 
+                    name="skill2" 
                     className="form-control"
-                    checked={form.isLit}
-                    value={form.isLit}
+                    value={form.skill2}
+                    onChange={handleInputChange}
+                />
+            </div>
+            <div className="form-group">
+                <label htmlFor="skill3">Skill 3:</label>
+                <input 
+                    type="text" 
+                    name="skill3" 
+                    className="form-control"
+                    value={form.skill3}
                     onChange={handleInputChange}
                 />
             </div>

@@ -7,15 +7,16 @@ const Create = props => {
 
     const [petForm,setPetForm] = useState({
         name:"",
-        breed:"",
-        age: 0,
-        favoriteMove:"",
-        isLit:false
+        type:"",
+        description: "",
+        skill1:"",
+        skill2:"",
+        skill3:""
     });
     const [errors,setErrors] = useState({
         name:"",
-        breed:"",
-        age:""
+        type:"",
+        description:""
     })
 
     const handleInputChange = e => {
@@ -47,7 +48,7 @@ const Create = props => {
 
     return(
         <div>
-            <h2 className="text-center">Add A Dog to the Disco</h2>
+            <h2 className="text-center">Know a pet needing a home?</h2>
             <PetForm 
                 form={petForm}
                 handleInputChange={handleInputChange}

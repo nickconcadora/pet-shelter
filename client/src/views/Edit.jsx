@@ -6,15 +6,16 @@ import { navigate } from '@reach/router';
 const Edit = props => {
     const [petForm,setPetForm] = useState({
         name:"",
-        breed:"",
-        age: 0,
-        favoriteMove:"",
-        isLit:false
+        type:"",
+        description: "",
+        skill1:"",
+        skill2:"",
+        skill3:""
     });
     const [errors,setErrors] = useState({
         name:"",
-        breed:"",
-        age:""
+        type:"",
+        description:""
     });
 
     useEffect(() => {
