@@ -29,7 +29,7 @@ const Show = props => {
         <div className="card col-6 mx-auto">
             <Link to={`/edit/${props.id}`} >Edit</Link>
             <div className="card-body">
-                <div className="card-title">{pet.name}</div>
+                <h2 className="card-title">{pet.name}</h2>
                 <h4 className="card-subtitle text-muted">{pet.type}</h4>
                 <p className="card-text">Description: {pet.description}</p>
                 
@@ -41,7 +41,7 @@ const Show = props => {
                 <button onClick={() => bouncePet(pet._id,pet.name)} className="btn btn-danger">Adopt Pet</button>
                 
             </div>
-        </div> : <p>Loading . . .</p>
+        </div> : <p>Click "Home" to go back</p>
     );
 }
 
